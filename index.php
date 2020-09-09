@@ -17,8 +17,8 @@
                     <a href="#" class="nav-link">Explore</a>
                 </div>
                 <div class="search-bar flex">
-                    <input type="search" name="" id="" class="search-bar-input" placeholder="">
-                    <button type="submit" class="search-button">Search</button>
+                    <input type="search" name="" id="search-bar-input" class="search-bar-input" placeholder="">
+                    <button type="button" id="search-button" class="search-button">Search</button>
                 </div>
             </div>
 
@@ -26,12 +26,14 @@
                 <div class="row">
                     <div class="card">
                         <h1>Weather App</h1>
-                        <p>Weather Captions</p>
+                        <p>Previous Weather Searches</p>
+                        All previous and current searches will appear here!
                     </div>
-                    <div class="card">
-                        <h2>Weather Icon</h2>
-                                & <br> <br>
-                        Weather Details appear here!
+                    <div  class="card">
+                        <h2>Weather Updates</h2>
+                        <div id="weather-updates" class="weather-updates">
+                            
+                        </div>
                     </div>
                 </div>
             </div>
