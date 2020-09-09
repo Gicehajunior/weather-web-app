@@ -1,3 +1,4 @@
+<?php include "environment.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -17,7 +18,8 @@
                     <a href="#" class="nav-link">Explore</a>
                 </div>
                 <div class="search-bar flex">
-                    <input type="search" name="" id="search-bar-input" class="search-bar-input" placeholder="">
+                    <input type="search" name="" id="search-bar-input" class="search-bar-input" placeholder="Type to search!">
+                    <input type="text" hidden="hidden" name="" id="api-key" value="<?php echo $OPEN_WEATHER_MAP_API_KEY; ?>">
                     <button type="button" id="search-button" class="search-button">Search</button>
                 </div>
             </div>

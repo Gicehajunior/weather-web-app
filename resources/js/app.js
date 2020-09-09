@@ -17,7 +17,7 @@ search();
 function search(){
     searchBtn.addEventListener("click", () => {
         let city = $("#search-bar-input").val();
-        let apiKey = "e3bee19e89f08ed2a14bb5c9f164ce35";
+        let apiKey = $("#api-key").val();
 
         let data = {
             q: city,
