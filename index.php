@@ -17,10 +17,18 @@
                     <a href="#" class="nav-link">Home</a>
                     <a href="#" class="nav-link">Explore</a>
                 </div>
+                <div class="bar">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
                 <div class="flex navs toggle-bar">
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <a href="#" class="close-btn">&times;</a>
+                    <div class="side-navs">
+                        <a href="#" class="side-nav-link">Home</a>
+                        <a href="#" class="side-nav-link">Explore</a>
+                        <a href="#" class="side-nav-link">Settings</a>
+                    </div>
                 </div>
                 <div class="search-bar flex">
                     <input type="search" name="" id="search-bar-input" class="search-bar-input" placeholder="Type to search!">
@@ -33,17 +41,25 @@
                 <div class="row">
                     <div class="card">
                         <h1>Weather App</h1>
-                        <p>Previous Weather Searches</p>
-                        All previous and current searches will appear here!
+                        <p class="weather-status-p">Previous Weather Search done on <span class="weather-status-span"></span></p>
+                        <div class="weather-searches">
+
+                        </div>
                     </div>
                     <div  class="card weather-updates-container">
                         <h2>Weather Updates</h2>
-                        <div id="weather-updates" class="weather-updates">
-                            
+                        <div id="weather-updates" class="weather-updates weather-search-container">
+                            No available search, If available, would appear here! 
+                            <!-- <div class="weather-search-container">
+                                <p>No available search, If available, would appear here! </p>
+                            </div> -->
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="footer">
+            <p>Weather App Developed and Designed By Giceha Junior. Copyrights &copy; @<?php echo date("Y"); ?></p>
         </div>
         <script src="resources/js/app.js"></script>
     </body>
