@@ -17,6 +17,11 @@
                     <a href="#" class="nav-link">Home</a>
                     <a href="#" class="nav-link">Explore</a>
                 </div>
+                <div class="flex navs toggle-bar">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
                 <div class="search-bar flex">
                     <input type="search" name="" id="search-bar-input" class="search-bar-input" placeholder="Type to search!">
                     <input type="text" hidden="hidden" name="" id="api-key" value="<?php echo $OPEN_WEATHER_MAP_API_KEY; ?>">
@@ -31,7 +36,7 @@
                         <p>Previous Weather Searches</p>
                         All previous and current searches will appear here!
                     </div>
-                    <div  class="card">
+                    <div  class="card weather-updates-container">
                         <h2>Weather Updates</h2>
                         <div id="weather-updates" class="weather-updates">
                             
