@@ -12,6 +12,12 @@ body{
 .toggle-bar {
     display: none;
 }
+.toggle-bar .side-navs{
+    display: none;
+}
+.bar div{
+    display: none;
+}
 .navs a{
     text-decoration-line: none;
     padding-left: 10px;
@@ -46,13 +52,44 @@ body{
         display: none;
     }
     .toggle-bar{
-        display: inline;
+        display: block;
+        height: 100%;
+        width: 0;
+        position: fixed;
+        top: -10px;
+        left: 0;
+        padding-top: 60px;
+        background-color: black;
+        transition: 0.5s;
+        z-index: 1;
     }
-    .toggle-bar div{
-        width: 35px;
+    .toggle-bar .visible {
+        display: block;
+    }
+    .toggle-bar .side-navs .side-nav-link{
+        display: block;
+        font-size: 25px;
+        padding: 8px 8px 8px 32px;
+        color: #EEEEEE;
+        text-decoration-line: none;
+    }
+    .toggle-bar .close-btn{
+        font-size: 4rem;
+        float: right;
+        color:#EEEEEE;
+        margin-top: -60px;
+        padding-right: 20px;
+        cursor: pointer;
+    }
+    .bar div{
+        display: flex; 
+        width: 32px;
         height: 5px;
         background-color: black;
         margin: 6px auto;
+    }
+    .bar{
+        cursor: pointer;
     }
 }
 
@@ -66,11 +103,13 @@ body{
     display: flex;
 }
 .card-container .row .card{
-    border: 2px solid black;
     border-radius: 5px;
     padding: 8px;
     width: 50%;
     height: 50%;
+}
+.weather-updates-container{
+    border-left: 2px solid #EEEEEE;
 }
 
 /* end of card styling */
@@ -85,4 +124,26 @@ body{
         width: 100%;
         height: 100%;
     }
+}
+
+.weather-container{
+    width: 50%;
+    margin:  0 auto;
+}
+.weather-search-container{
+    background-color: #EEEEEE;
+    border-radius: 11px;
+    font-size: 2.2rem;
+    padding-left: 10px;
+}
+.footer{
+    bottom: 0;
+    position: fixed;
+    background-color: #EEEEEE;
+    text-align: center;
+    padding: 5px;
+    width: 100%;
+}
+button{
+    cursor: pointer;
 }
