@@ -49,10 +49,7 @@
                     <div  class="card weather-updates-container">
                         <h2>Weather Updates</h2>
                         <div id="weather-updates" class="weather-updates weather-search-container">
-                            No available search, If available, would appear here! 
-                            <!-- <div class="weather-search-container">
-                                <p>No available search, If available, would appear here! </p>
-                            </div> -->
+                            No available search, If available, would appear here!
                         </div>
                     </div>
                 </div>
