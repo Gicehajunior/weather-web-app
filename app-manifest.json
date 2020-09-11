@@ -1,0 +1,15 @@
+{
+    "name": "BlogBook Weather",
+    "short_name": "BlogBook Weather",
+    "description": "Get fast updates and weather searches with BlogBook Weather",
+    "start_url": "index.php",
+    "background_color": "#fff",
+    "theme_color": "#0f4a73",
+    "icons": [
+        {
+        "src": "public/images/10d.png",
+        "sizes": "256x256",
+        "type": "png"
+        }
+    ]
+}

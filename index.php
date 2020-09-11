@@ -5,6 +5,7 @@
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="manifest" href="app-manifest.json"/>
         <link href="resources/css/app.css" rel="stylesheet">
         
         <!-- jquery -->
@@ -39,12 +40,13 @@
 
             <div class="card-container">
                 <div class="row">
-                    <div class="card">
-                        <h1>Weather App</h1>
-                        <p class="weather-status-p">Previous Weather Search done on <span class="weather-status-span"></span></p>
-                        <div class="weather-searches">
+                    <div class="card"> 
+                        <div class="weather-searches weather-searches-previous-card-body">
 
-                        </div>
+                        </div> 
+                        <div class="weather-searches weather-searches-current-card-body weather-searches-card-body-inactive">
+
+                        </div> 
                     </div>
                     <div  class="card weather-updates-container">
                         <h2>Weather Updates</h2>

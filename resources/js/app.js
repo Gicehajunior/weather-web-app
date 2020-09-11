@@ -1,7 +1,7 @@
 const searchBtn = document.querySelector(".search-button");
-const weatherSearchesContainer = document.querySelector(".weather-searches");
+const weatherSearchesPreviousContainer = document.querySelector(".weather-searches-previous-card-body");
+const weatherSearchesCurrentContainer = document.querySelector(".weather-searches-current-card-body");
 const WeatherDisplay = document.querySelector(".weather-updates");
-const WeatherSearchTimeP = document.querySelector(".weather-status-span");
 
 const bar = document.querySelector(".bar");
 const closeSideNavBtn = document.querySelector(".close-btn");
@@ -11,10 +11,24 @@ const toggleBar = document.querySelector(".toggle-bar");
 let result = "";
 let weatherSearch = [];
 
-
+registerServiceWorker();
 search();
 openCloseSideNavbar();
 getPreviousWeatherSearches();
+
+/*******
+ *  This where a service worker is registered. 
+ * improves user expeeience on our app.
+ */
+function registerServiceWorker(){
+    if("serviceWorker" in navigator){
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register("../serviceWorker.js")
+            .then(reg => console.log("Service Worker: Registered"))
+            .catch(err => console.log(`Service Worker: Error: ${err}`));
+        });
+    }
+}
 
 /*******
  * this function takes care of any weather search done. 
@@ -41,24 +55,33 @@ function search(){
         dataType: "json",
 
         success: function (response) {
-            $.each(response.weather, (index, value) => {
-            result = `<p><b>${response.name}</b> <img src="public/images/${value.icon}.png" width="200" height="180"> ${response.main.temp}&deg;C <br> ${value.main} - ${value.description}<p>`;
-            WeatherDisplay.innerHTML = result;
+            $.each(response.weather, (index, value) => { 
+                result = `<div class="weather-container"><p><b>${response.name}</b> <img src="public/images/${value.icon}.png" width="200" height="180"> ${response.main.temp}&deg;C <br> ${value.main} - ${value.description}<p></div>`;
+                WeatherDisplay.innerHTML = result;
+                if (response !== "") {
+                    weatherSearchesCurrentContainer.innerHTML = result;
+                    weatherSearchesCurrentContainer.classList.remove("weather-searches-card-body-inactive"); 
+                    weatherSearchesPreviousContainer.classList.add("weather-searches-card-body-inactive");
+                } else {
+                    weatherSearchesPreviousContainer.innerHTML = result;
+                    weatherSearchesPreviousContainer.classList.remove("weather-searches-card-body-inactive");
+                    weatherSearchesCurrentContainer.classList.add("weather-searches-card-body-inactive");
+                }
 
-            dataRetrieved = {
-                city: response.name,
-                icon: value.icon,
-                temperature: response.main.temp,
-                caption: value.main,
-                description: value.description,
-                datetimeSearched: new Date(),
-            };
-            weatherSearch.push(dataRetrieved);
-            saveWeatherSearch(weatherSearch);
+                dataRetrieved = {
+                    city: response.name,
+                    icon: value.icon,
+                    temperature: response.main.temp,
+                    caption: value.main,
+                    description: value.description
+                };
+                weatherSearch.push(dataRetrieved);
+                saveWeatherSearch(weatherSearch);
             });
         },
         });
     });
+
 }
 
 /*********
@@ -80,16 +103,8 @@ function getPreviousWeatherSearches(){
     let weatherSearches = JSON.parse(localStorage.getItem("weatherSearch")); 
 
     weatherSearches.forEach((weather) => { 
-        result = `
-                <div class="container weather-container">
-                    <h4 class="searched-region"><b>${weather.city}</b></h4>
-                    <img src="public/images/${weather.icon}.png" width="200" height="180">
-                    <p class="temp">${weather.caption} - ${weather.description}</p>
-                    <p class="temp">Temperature as of now is: ${weather.temperature}&deg;C</p>
-                </div>
-            `;
-        WeatherSearchTimeP.innerHTML = weather.datetimeSearched;
-        weatherSearchesContainer.innerHTML = result;
+        result = `<div class="weather-container"><p><b>${weather.city}</b> <img src="public/images/${weather.icon}.png" width="250" height="200"> ${weather.temperature}&deg;C <br> ${weather.caption} - ${weather.description}<p></div>`;
+        weatherSearchesPreviousContainer.innerHTML = result;
     });
     
 }
