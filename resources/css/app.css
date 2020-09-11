@@ -108,40 +108,21 @@ body{
     padding: 8px;
     width: 50%;
     height: 50%;
+    margin: 0 auto;
+
 }
 .weather-searches-card-body-inactive{
     display: none;
 }
-.weather-updates-container{
-    border-left: 2px solid #EEEEEE;
-}
-
 /* end of card styling */
-@media only screen and (max-width: 600px){
-    .weather-updates-container{
-        display: none;
-    }
+@media only screen and (max-width: 600px){ 
     .card-container .row .card {
         border-radius: 5px;
         padding: 8px;
         width: 100%;
         height: 100%;
+        margin: 0 auto;
     }
-}
-
-.weather-container{
-    width: 50%;
-    margin:  10px auto;
-    font-weight: bold;
-}
-.weather-container p b{
-    font-size:24px;
-}
-.weather-search-container{
-    background-color: #EEEEEE;
-    border-radius: 11px;
-    font-size: 2.2rem;
-    padding-left: 10px;
 }
 .footer{
     bottom: 0;

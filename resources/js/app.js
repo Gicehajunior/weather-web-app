@@ -1,7 +1,6 @@
 const searchBtn = document.querySelector(".search-button");
 const weatherSearchesPreviousContainer = document.querySelector(".weather-searches-previous-card-body");
 const weatherSearchesCurrentContainer = document.querySelector(".weather-searches-current-card-body");
-const WeatherDisplay = document.querySelector(".weather-updates");
 
 const bar = document.querySelector(".bar");
 const closeSideNavBtn = document.querySelector(".close-btn");
@@ -56,8 +55,8 @@ function search(){
 
         success: function (response) {
             $.each(response.weather, (index, value) => { 
-                result = `<div class="weather-container"><p><b>${response.name}</b> <img src="public/images/${value.icon}.png" width="200" height="180"> ${response.main.temp}&deg;C <br> ${value.main} - ${value.description}<p></div>`;
-                WeatherDisplay.innerHTML = result;
+                result = `<div class="weather-container"><center><p><h2><b>${response.name}</b></h2> <img src="public/images/${value.icon}.png" width="250" height="200"> <span>${response.main.temp}&deg;C</span> <br> <span>${value.main} - ${value.description}</span><p></center</div>`;
+                
                 if (response !== "") {
                     weatherSearchesCurrentContainer.innerHTML = result;
                     weatherSearchesCurrentContainer.classList.remove("weather-searches-card-body-inactive"); 
@@ -103,7 +102,7 @@ function getPreviousWeatherSearches(){
     let weatherSearches = JSON.parse(localStorage.getItem("weatherSearch")); 
 
     weatherSearches.forEach((weather) => { 
-        result = `<div class="weather-container"><p><b>${weather.city}</b> <img src="public/images/${weather.icon}.png" width="250" height="200"> ${weather.temperature}&deg;C <br> ${weather.caption} - ${weather.description}<p></div>`;
+        result = `<div class="weather-container"><center><p><h2><b>${weather.city}</b></h2> <img src="public/images/${weather.icon}.png" width="250" height="200"> <br> <span>${weather.temperature}&deg;C</span> <br> <span>${weather.caption} - ${weather.description}</span><p></center></div>`;
         weatherSearchesPreviousContainer.innerHTML = result;
     });
     

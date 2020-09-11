@@ -40,19 +40,14 @@
 
             <div class="card-container">
                 <div class="row">
-                    <div class="card"> 
+                    <div class="card">
+                        <h2>Weather Updates with BlogBook Weather!<h2>
                         <div class="weather-searches weather-searches-previous-card-body">
 
                         </div> 
                         <div class="weather-searches weather-searches-current-card-body weather-searches-card-body-inactive">
 
                         </div> 
-                    </div>
-                    <div  class="card weather-updates-container">
-                        <h2>Weather Updates</h2>
-                        <div id="weather-updates" class="weather-updates weather-search-container">
-                            No available search, If available, would appear here!
-                        </div>
                     </div>
                 </div>
             </div>
