@@ -42,9 +42,9 @@ function search(){
         let apiKey = $("#api-key").val();
 
         let data = {
-        q: city,
-        appid: apiKey,
-        units: "metrics",
+            q: city,
+            appid: apiKey,
+            units: "metrics",
         };
 
         $.ajax({
