@@ -14,5 +14,5 @@ Weather Web App using Open Weather Map API
  Create the API key from the open weather api website and use it in your case, However, if you try to run with an invalid key, it will not run.
       
  ## License
- MIT
+ <a href="https://github.com/Gicehajunior/weather-web-app/blob/master/LICENSE">MIT</a>
 
