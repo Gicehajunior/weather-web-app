@@ -2,7 +2,7 @@
     "name": "BlogBook Weather",
     "short_name": "BlogBook Weather",
     "description": "Get fast updates and weather searches with BlogBook Weather",
-    "start_url": "index.php",
+    "start_url": ".",
     "background_color": "#fff",
     "theme_color": "#0f4a73",
     "icons": [
